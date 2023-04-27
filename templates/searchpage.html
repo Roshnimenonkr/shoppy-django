@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search results</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">
+
+    <link rel="stylesheet" href="static/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="static/css/categ.css">
+
+    <link rel="stylesheet" href="static/css/lightbox.css">
+    
+    <style>
+        body{
+            background-color: white;
+        }
+        .card{
+            left:40px;
+            top:30px;
+        }
+    </style>
+</head>
+<body>
+   
+    {% for dt in data %}
+    <div class="col-md-4">
+    <div class="card border-dark mb-3" style="width: 18rem;">
+        <a href="{% url 'detail_page' dt.slug %}">   <img src="{{dt.product_image.url}}" alt="Product" class="card-img-top" /></a>
+        <div class="card-body">
+          <h5 class="card-title">{{dt.title}}</h5>
+          <p class="card-text">{{dt.short_description}}</p>
+          <br>
+          <h4>{{dt.price}}</h4>
+          
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+
+    <!-- <div class="container text-center " >
+        <div class="shell">
+          <div class="container">
+            <div class="row">
+                <div class="shell">
+                    <div class="container">
+                      <div class="row">
+                        
+                        {% for dt in data %}
+                        
+                        <div class="col-md-3">
+                          <div class="wsk-cp-product">
+                            <div class="wsk-cp-img">
+                          <a href="{% url 'detail_page' dt.slug %}">   <img src="{{dt.product_image.url}}" alt="Product" class="img-responsive" /></a> 
+                            </div>
+                            <div class="wsk-cp-text">
+                              <div class="category">
+                                <span>{{dt.title}}</span>
+                              </div>
+                              
+                              <div class="description-prod">
+                                <p>{{dt.short_description}}</p>
+                                
+                              </div>
+                              
+                              <div class="card-footer">
+                                <div class="wcf-left"><span class="price">{{dt.price}}</span></div>
+                                <div class="wcf-right"><a href="#" class="buy-btn"><i class="zmdi zmdi-shopping-basket"></i></a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                        
+            </div>
+          </div>
+        </div>
+     </div>   
+     </div></div> 
+
+     </div> -->
+
+    <!-- {% for dt in data %} -->
+    <!-- <h2>{{request.GET.q}}</h2> -->
+    <!-- <h1>Search Results......</h1>
+    <h2>{{dt.title}}</h2>
+    <div class = "card-wrapper">
+        <div class = "card">
+           card left -->
+          <!-- <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <br><br><br>
+                <a href="{% url 'detail_page' dt.slug %}">
+                <img src = "{{dt.product_image.url}}" alt = "search">   
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> -->
+            <!-- {% endfor %} --> 
+</body>
+</html>

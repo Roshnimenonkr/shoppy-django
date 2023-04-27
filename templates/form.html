@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Rubik+Distressed&display=swap');
+body{
+    background-image:url(https://images.unsplash.com/photo-1675124516483-b7d21f60e6d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80) ;
+    background-repeat: no-repeat;
+    background-position:center;
+   background-size: 100% 100%; 
+    background-attachment: fixed;  
+    
+}
+div{
+    position: absolute;
+    top: 20%;
+    left:35%;
+    width:400px;
+    text-align: center;
+    font-size: 15px;
+    background-color:rgb(255, 255, 255,.4);
+    border-radius:25px ;
+    
+
+}
+.in{
+    color:black;
+    text-align: center;
+    font-size:18px; 
+    top:40%;
+    position: relative;
+    left:0%;
+    height: 330px ;
+    background-color:rgb(255, 255, 255,.01);
+    border: none;
+}
+a{
+    text-decoration: none;
+    text-align: left;
+    color:blue ;
+
+}
+input, textarea {font-family: Arial; color: #333;}
+button{
+    background-color: blue;
+    border-color: blue;
+    color: white;
+    font-weight:bold ;
+
+}
+
+h3{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
+/* .helptext{
+  visibility: hidden;
+  
+} */
+
+  </style>
+  <title>REGISTRATION</title>
+</head>
+<body>
+  <!-- <div> -->
+    <h3>REGISTRATION</h3>
+    <!-- <div class="in"> -->
+        <form method="POST">
+          {% csrf_token %} 
+        
+        <!-- <textarea name="Address" id="Address" cols="22" rows="5" placeholder="Address"></textarea><br>
+         -->
+
+        {{form.as_p}}
+                 
+       
+        <button type="submit">Submit</button>
+      </form>
+          {% if messages %} 
+          {% for msg in messages %}
+         <h1  style="color:red ;"> {{ msg }}</h1> <!--  Jinja Template-->
+         {% endfor %}
+         {% endif %}
+    <!-- </div>
+  </div> -->
+</body>
+</html>
